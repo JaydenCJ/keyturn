@@ -1,0 +1,18 @@
+# build artifacts
+/keyturn
+/dist/
+
+# local key stores (never commit credentials, even hashed)
+keyturn.json
+*.keys.json
+
+# test and coverage output
+*.test
+*.out
+coverage.*
+
+# editor noise
+.idea/
+.vscode/
+*.swp
+.DS_Store

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="430" viewBox="0 0 720 430" font-family="Menlo, Consolas, monospace" font-size="14">
+  <rect width="720" height="430" rx="10" fill="#101418"/>
+  <circle cx="24" cy="22" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="22" r="6" fill="#ffbd2e"/>
+  <circle cx="64" cy="22" r="6" fill="#27c93f"/>
+  <text x="360" y="27" fill="#8b949e" text-anchor="middle" font-size="12">keyturn — issue, hash, scope and rate-limit API keys</text>
+  <g fill="#c9d1d9">
+    <text x="24" y="62"><tspan fill="#7ee787">$</tspan> keyturn create --name acme-prod --label live --scopes 'read:*' --rate 100/1m</text>
+    <text x="24" y="88">key:     <tspan fill="#f778ba">kt_live_x7bvrgw6sg_9wvmc5y8nd7sfdptnq997s4w78ab</tspan></text>
+    <text x="24" y="110">id:      x7bvrgw6sg   limit:   <tspan fill="#79c0ff">100/1m</tspan>   …</text>
+    <text x="24" y="140"><tspan fill="#7ee787">$</tspan> keyturn serve</text>
+    <text x="24" y="164" fill="#8b949e">keyturn 0.1.0 listening on http://127.0.0.1:7710 (store: keyturn.json, 1 key)</text>
+    <text x="24" y="196"><tspan fill="#7ee787">$</tspan> curl -d '{"key":"kt_live_…","scopes":["read:users"]}' :7710/v1/verify</text>
+    <text x="24" y="222">{</text>
+    <text x="24" y="244">  <tspan fill="#79c0ff">"valid"</tspan>: <tspan fill="#7ee787">true</tspan>,</text>
+    <text x="24" y="266">  <tspan fill="#79c0ff">"key_id"</tspan>: "x7bvrgw6sg",</text>
+    <text x="24" y="288">  <tspan fill="#79c0ff">"name"</tspan>: "acme-prod",  …</text>
+    <text x="24" y="310">  <tspan fill="#79c0ff">"remaining"</tspan>: <tspan fill="#d2a8ff">99</tspan></text>
+    <text x="24" y="332">}</text>
+    <text x="24" y="366"><tspan fill="#7ee787">$</tspan> keyturn revoke x7bvrgw6sg &amp;&amp; curl … :7710/v1/verify</text>
+    <text x="24" y="392">{ <tspan fill="#79c0ff">"valid"</tspan>: <tspan fill="#f778ba">false</tspan>, <tspan fill="#79c0ff">"reason"</tspan>: <tspan fill="#f778ba">"disabled"</tspan>, … }</text>
+  </g>
+</svg>
